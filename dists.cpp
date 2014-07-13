@@ -13,7 +13,7 @@ using namespace std;
 
 int main()
 {
-	// Don't forget to tell compiler which namespace
+	
 	using namespace boost::math;
 
 	uniform_distribution<> myUniform(0.0, 1.0); // Default type ie 'double'
