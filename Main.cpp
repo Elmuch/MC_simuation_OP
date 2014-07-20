@@ -16,12 +16,25 @@ using namespace std;
 
 int main()
 {
+    int p = 6;
+        char data[p];
+    ifstream GetFromClient;
+    GetFromClient.open("/home/ngwachi/Desktop/developer/optionData.txt");//created by rails client
+        cout<<"reading from file"<<endl;
 
-	double T = 0.25;
-	double K =65;
-	double sig = 0.30;
-	double r = 0.08;
-	double S = 60;
+        for ( int n2=0; n2<p; ++n2)
+        {
+         GetFromClient >> data;
+        cout<<data<<endl;
+        }
+
+    GetFromClient.close();
+
+	double T = data[0];
+	double K =data[1];
+	double sig = data[2];
+	double r = data[3];
+	double S = data[4];
 	double b = r-0.0;
 
     EuropeanOption Batch1(T,K,sig,r,S,b);
