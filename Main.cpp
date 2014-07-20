@@ -19,7 +19,7 @@ int main()
     int p = 6;
         char data[p];
     ifstream GetFromClient;
-    GetFromClient.open("/home/ngwachi/Desktop/developer/optionData.txt");//created by rails client
+    GetFromClient.open("/home/ngwachi/Desktop/developer/Options/data_interactions/optionData.txt");//created by rails client
         cout<<"reading from file"<<endl;
 
         for ( int n2=0; n2<p; ++n2)
@@ -41,9 +41,7 @@ int main()
     CallOption C(Batch1);
     PutOption  P(Batch1);
     ofstream SendtoClient;
-    SendtoClient.open("/home/ngwachi/Desktop/developer/results.json");
-        SendtoClient <<"Hello some output here"<<endl;
-
+    SendtoClient.open("/home/ngwachi/Desktop/developer/Options/data_interactions/results.json");
     SendtoClient<<"---------------Batch1--------------------------------- \n"<<endl;
 
     //test  pricers
@@ -172,8 +170,6 @@ SendtoClient<<"\n------------------Greeks---------------------------" <<endl;
 
     vector<double> call_gamma =Call.Callgamma(Put,Mesh(95,105,5)); //call gamma mesher
     print(call_gamma, string("Call gamma mesher: ")); //
-
-
 
     // Test appromation of delta and  gamma
     SendtoClient<<"\n Approximation of sensitivities "<<endl;
