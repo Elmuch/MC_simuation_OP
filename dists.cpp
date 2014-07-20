@@ -13,14 +13,14 @@ using namespace std;
 
 int main()
 {
-	
+
 	using namespace boost::math;
 
 	uniform_distribution<> myUniform(0.0, 1.0); // Default type ie 'double'
 	cout << "Lower value: " << myUniform.lower() << ", upper value: " << myUniform.upper() << endl;
 
 	// Choose another data type
-	uniform_distribution<float> myUniform2(0.0, 1.0); 
+	uniform_distribution<float> myUniform2(0.0, 1.0);
 	cout << "Lower value: " << myUniform2.lower() << ", upper value: " << myUniform2.upper() << endl;
 
 	// Distributional properties
@@ -28,7 +28,7 @@ int main()
 
 	cout << "pdf of Uniform: " << pdf(myUniform, x) << endl;
 	cout << "cdf of Uniform: " << cdf(myUniform, x) << endl;
-	
+
 	// Bernoulli distributions
 	bernoulli_distribution<> myBernoulli(0.4);
 	cout << "Probability of success: " << myBernoulli.success_fraction() << endl;
@@ -37,14 +37,14 @@ int main()
 	cout << "pdf of Bernoulli: " << pdf(myBernoulli, k) << endl;
 	cout << "cdf of Bernoulli : " << cdf(myBernoulli, k) << endl << endl;
 
-	
+
 	// Choose precision
 	cout.precision(8); // Number of values behind the comma
 
 	// Other properties
 	cout << "\n***Uniform distribution: \n";
 	cout << "mean: " << mean(myUniform) << endl;
-	
+
 	// ... more
 
 	cout << "hazard: " << hazard(myUniform, x) << endl;
@@ -52,7 +52,7 @@ int main()
 	// STUDENT
 	students_t_distribution<float> myStudent(30);
 
-	// Quantiles and conversions between significance levels (fractions, 0.05) 
+	// Quantiles and conversions between significance levels (fractions, 0.05)
 	// and cofidence levels (in percentages, e.g. 95%)
 	double Alpha = 0.25;
 	cout << "Confidence 1: " << quantile(myStudent, Alpha / 2) << endl;
