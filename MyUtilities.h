@@ -10,7 +10,7 @@
 #include <string>
 #include <iostream>
 #include <cmath>
-//#include <boost/math/distributions.hpp>
+#include <boost/math/distributions.hpp>
 
 using namespace std;
 namespace Ngwachi
@@ -41,19 +41,19 @@ typename vector<T>::const_iterator i;
 }
 	// Gaussian functions
 	//Normal pdf
-//inline double n(double x)
-	//{
-//boost::math::normal_distribution<> Mynormal(0.0,1.0); //standard normal variable
+    inline double n(double x)
+        {
+    boost::math::normal_distribution<> Mynormal(0.0,1.0); //standard normal variable
 
-//return pdf(Mynormal,x);
-	//}
+    return pdf(Mynormal,x);
+	}
 
-//normal cdf
-//inline double N(double x)
-	//{ //boost normal distribution
-//boost::math::normal_distribution<> Mynormal(0.0,1.0);
+    //normal cdf
+inline double N(double x)
+        { //boost normal distribution
+    boost::math::normal_distribution<> Mynormal(0.0,1.0);
 
-//return cdf(Mynormal,x);
-	//}
-//}
+    return cdf(Mynormal,x);
+	}
+}
 #endif
